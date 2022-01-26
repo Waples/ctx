@@ -9,6 +9,13 @@ Based on the existing Caesar Cipher, we have a set code where we skip steps in t
 
 For this simple (initial) example of encryption we are gonna use a simple calculation (unlike the [Enigma machine](todo)) where we just divide the input by 2, to create a new value for the rotation (rotor) _(* This will be improved in the future)_.
 
+## Testing
+Just run the following for testing the code.
+
+```bash
+  $ python cipher.py
+```
+
 ## Encryption
 
 ##### Simple initial encyption example explained
