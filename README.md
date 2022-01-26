@@ -67,4 +67,6 @@ For this simple (initial) example of encryption we are gonna use a simple calcul
 ```
 
 ## Decryption
-Todo...
+This is easy peazy, when you have the `initial key`. Same with the rotation steps, you can re-create the codes with the `init`.
+
+zodus
