@@ -8,7 +8,7 @@ if DEBUG:
     MSG = 'Mijn code werkt gewoon!'
     KEY = '538'
 
-def converter(l, k=1):
+def converter(l, k):
     """
     Gets the corresponding number for the letter from the `alpha` dict, adds the
     number with the `k` value and returns the corresponding letter.
@@ -45,12 +45,14 @@ def encrypt(msg, key, rotor=rotations):
     return ''.join(tmp)
 
 
-def decrypt(key, rotor=rotations):
-    pass
+def decrypt(msg, key, rotor=rotations):
+    return "foo"
 
 
 if DEBUG:
     cprint(f'Initial msg: "{MSG}"', 'green')
     cprint(f'Key: {KEY}', 'green')
     e = encrypt(msg=MSG, key=KEY, rotor=0)
-    cprint(f'Encrypted output: {e}', 'white', 'on_green', attrs=['bold'])
+    cprint(f'Encrypted output: {e}', 'white', 'on_red', attrs=['bold'])
+    d = decrypt(msg=e, key=KEY, rotor=0)
+    cprint(f'Decrypted output: {d}', 'white', 'on_blue', attrs=['bold'])
