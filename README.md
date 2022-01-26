@@ -1,5 +1,6 @@
 # CTx
-> Caeser Cipher with a Twist
+> Caesar Cipher with a Twist.
+> - Florian, 2021
 
 ##### Example
 |code|input|output|
