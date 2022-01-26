@@ -47,7 +47,7 @@ For this simple (initial) example of encryption we are gonna use a simple calcul
 
 |code|input|output|
 |-|-|-|
-|5383|ik kan niet slapen|NNSFQUNHBYOIUQ|
+|5382|ik kan niet slapen|NNSFQUNHBYOIUQ|
 |324|NNSFQUNHBYOIUQ|QPWISYQJFBQMXS|
 |212|QPWISYQJFBQMXS|SQYKTASKHDROZT|
 ```bash
