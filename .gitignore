@@ -1,0 +1,5 @@
+*.backup
+*.bak
+*.sec
+*.secrets
+**/secrets/**
