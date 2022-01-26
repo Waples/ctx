@@ -41,7 +41,7 @@ For this simple (initial) example of encryption we are gonna use a simple calcul
 |5381|ik kan niet slapen|NNSFQUNHBYOIUQ|
 |324|NNSFQUNHBYOIUQ|QPWISYQJFBQMXS|
 
-##### Three Rotations
+##### Two Rotations
 
 |code|input|output|
 |-|-|-|
