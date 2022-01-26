@@ -2,6 +2,8 @@
 > Caesar Cipher with a Twist.
 > - Florian, 2021
 
+![example](./img.png)
+
 ## tl;dr
 Based on the existing Caesar Cipher, we have a set code where we skip steps in the alphabet to encrypt a message or text. In [Example 1](#no-rotation) we only have the code initial code `538(x)`. In [Example 3](#one-rotation) we use **2** code rotation(s), which uses the initial cipher _(538(x))_, which gets rotated every time based on the `x` value of the initial code.
 
