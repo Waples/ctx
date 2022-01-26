@@ -3,3 +3,4 @@
 *.sec
 *.secrets
 **/secrets/**
+**/__pycache__/**
