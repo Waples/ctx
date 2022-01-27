@@ -4,7 +4,8 @@ from conf import alpha_a, alpha_b, key_len, rotations, num
 from termcolor import cprint
 
 DEBUG = True
-if DEBUG:
+TEST = True
+if TEST:
     MSG = 'Mijn code werkt gewoon!'
     KEY = '538'
 
@@ -58,7 +59,7 @@ def decrypt(msg, key, state, rotor=rotations):
     return ''.join(tmp)
 
 
-if DEBUG:
+if TEST:
     cprint(f'Initial msg: "{MSG}"', 'green')
     cprint(f'Key: {KEY}', 'green')
     e = encrypt(msg=MSG, key=KEY, rotor=0, state='encrypt')
