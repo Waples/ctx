@@ -9,6 +9,18 @@ if TEST:
     MSG = 'Mijn code werkt gewoon!'
     KEY = '538'
 
+
+def rotation_calc(input_key, rotor=1):
+    """Returns a new key based on the rotations"""
+    for r in range(0, int(key_len)):
+        key = []
+        for i in input_key:
+            i = int(i)/int(key_len)
+            i = round(i)
+            key.append(i)
+    return key
+
+
 def converter(l, k, state):
     """
     Gets the corresponding number for the letter from the `alpha` dict, adds the
@@ -66,3 +78,6 @@ if TEST:
     cprint(f'Encrypted output: {e}', 'white', 'on_red', attrs=['bold'])
     d = decrypt(msg=e, key=KEY, rotor=0, state='decrypt')
     cprint(f'Decrypted output: {d}', 'white', 'on_blue', attrs=['bold'])
+
+    k = rotation_calc(input_key=KEY, rotor=2)
+    cprint(f'New key: {k}, based on 2 rotations', 'yellow')
