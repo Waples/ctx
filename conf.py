@@ -19,4 +19,4 @@ alpha_b = {
   }
 
 key_len = 3
-rotations = 2
+rotations = 0

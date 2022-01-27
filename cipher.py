@@ -8,17 +8,24 @@ if DEBUG:
     MSG = 'Mijn code werkt gewoon!'
     KEY = '538'
 
-def converter(l, k):
+def converter(l, k, state):
     """
     Gets the corresponding number for the letter from the `alpha` dict, adds the
     number with the `k` value and returns the corresponding letter.
     """
     initial_value = alpha_a[l]
-    new_value = initial_value + int(k)
-    if new_value > num:
-        new_value = new_value-num
-        if DEBUG:
-            cprint(f'converter ==> set to {new_value} == {alpha_b[new_value]}', 'yellow')
+    if state == 'encrypt':
+        new_value = initial_value + int(k)
+        if new_value > num:
+            new_value = new_value-num
+            if DEBUG:
+                cprint(f'converter ==> set to {new_value} == {alpha_b[new_value]}', 'yellow')
+    if state == 'decrypt':
+        new_value = initial_value - int(k)
+        if new_value < 0:
+            new_value = new_value+num
+            if DEBUG:
+                cprint(f'converter ==> set to {new_value} == {alpha_b[new_value]}', 'yellow')
     if DEBUG:
         cprint(f'\t{l} =---> {alpha_b[new_value]}', 'cyan')
     return alpha_b[new_value]
@@ -32,27 +39,29 @@ def sanitize(msg):
     return ret
 
 
-def encrypt(msg, key, rotor=rotations):
+def encrypt(msg, key, state, rotor=rotations):
     tmp = []
     m = sanitize(msg)
-
-    # FIXME
-    #for _ in range(rotations):
     key = cycle(key)
     for l in m:
         k = next(key)
-        tmp.append(converter(l, k))
+        tmp.append(converter(l, k, state))
     return ''.join(tmp)
 
 
-def decrypt(msg, key, rotor=rotations):
-    return "foo"
+def decrypt(msg, key, state, rotor=rotations):
+    tmp = []
+    key = cycle(key)
+    for l in msg:
+        k = next(key)
+        tmp.append(converter(l, k, state))
+    return ''.join(tmp)
 
 
 if DEBUG:
     cprint(f'Initial msg: "{MSG}"', 'green')
     cprint(f'Key: {KEY}', 'green')
-    e = encrypt(msg=MSG, key=KEY, rotor=0)
+    e = encrypt(msg=MSG, key=KEY, rotor=0, state='encrypt')
     cprint(f'Encrypted output: {e}', 'white', 'on_red', attrs=['bold'])
-    d = decrypt(msg=e, key=KEY, rotor=0)
+    d = decrypt(msg=e, key=KEY, rotor=0, state='decrypt')
     cprint(f'Decrypted output: {d}', 'white', 'on_blue', attrs=['bold'])
