@@ -4,7 +4,7 @@ from conf import alpha_a, alpha_b, key_len, rotations, num
 from termcolor import cprint
 
 DEBUG = True
-TEST = False
+TEST = True
 if TEST:
     MSG = 'Mijn code werkt gewoon!'
     KEY = '538'
